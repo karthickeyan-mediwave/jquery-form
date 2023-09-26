@@ -1,6 +1,5 @@
 $(document).ready(function () {
   const User = [];
-
   $("#email-error").hide();
   $("#password-error").hide();
   function validate() {
@@ -12,22 +11,18 @@ $(document).ready(function () {
     let emailResult = emailRegex.test(email);
     let passwordResult = passwordRegex.test(password);
     if (emailResult == false) {
-      // alert("Please enter a valid email");
       $("#email-error").show();
       return false;
     }
     if (passwordResult == false) {
-      // alert("Please enter a valid password");
       $("#password-error").show();
       return false;
     }
     return true;
   }
-
   $("#submitbtn").click(function (e) {
     e.preventDefault();
     validate();
-
     const email = $("#emailid").val();
     const password = $("#passwordid").val();
     const item = {
@@ -41,7 +36,6 @@ $(document).ready(function () {
     $("#formid")[0].reset();
   });
 });
-
 // $(document).ready(function () {
 //   $("#submitbtn").click(function () {
 //     $("#show").text($("form").serialize());
