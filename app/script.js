@@ -1,5 +1,4 @@
 $(document).ready(function () {
-  const User = [];
   $("#email-error").hide();
   $("#password-error").hide();
   $("#eye").click(function () {
@@ -15,8 +14,8 @@ $(document).ready(function () {
   });
 
   function validate() {
-    let email = document.getElementById("emailid").value;
-    let password = document.getElementById("passwordid").value;
+    let email = $("#emailid").val();
+    let password = $("#passwordid").val();
     let emailRegex = /^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,})$/;
     let passwordRegex =
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!.@$%^&*-]).{8,}$/;
@@ -35,12 +34,11 @@ $(document).ready(function () {
       const email = $("#emailid").val();
       const password = $("#passwordid").val();
       const item = {
-        id: new Date().getTime(),
         email: email,
         password: password,
       };
-      User.push(item);
-      console.log(User);
+      console.log(item);
+
       $("#formid")[0].reset();
       $("#email-error").hide();
       $("#password-error").hide();

@@ -71,6 +71,7 @@ form .row input::placeholder {
   align-items: center;
   justify-content: center;
   right: 0;
+  cursor: pointer;
 }
 .wrapper form .pass {
   margin: -8px 0 20px 0;
