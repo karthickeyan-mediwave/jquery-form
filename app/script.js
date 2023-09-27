@@ -10,34 +10,32 @@ $(document).ready(function () {
       /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!.@$%^&*-]).{8,}$/;
     let emailResult = emailRegex.test(email);
     let passwordResult = passwordRegex.test(password);
-    if (emailResult == false) {
+    if (!emailResult) {
       $("#email-error").show();
-      return false;
+      $("#password-error").hide();
+      return;
     }
-    if (passwordResult == false) {
+    if (!passwordResult) {
       $("#password-error").show();
-      return false;
+      $("#email-error").hide();
+      return;
+    } else {
+      const email = $("#emailid").val();
+      const password = $("#passwordid").val();
+      const item = {
+        id: new Date().getTime(),
+        email: email,
+        password: password,
+      };
+      User.push(item);
+      console.log(User);
+      $("#formid")[0].reset();
+      $("#email-error").hide();
+      $("#password-error").hide();
     }
-    return true;
   }
   $("#submitbtn").click(function (e) {
     e.preventDefault();
     validate();
-    const email = $("#emailid").val();
-    const password = $("#passwordid").val();
-    const item = {
-      id: new Date().getTime(),
-      email: email,
-      password: password,
-    };
-    User.push(item);
-    console.log(User);
-
-    $("#formid")[0].reset();
   });
 });
-// $(document).ready(function () {
-//   $("#submitbtn").click(function () {
-//     $("#show").text($("form").serialize());
-//   });
-// });
