@@ -65,12 +65,12 @@ form .row input::placeholder {
   height: 100%;
   color: #fff;
   font-size: 18px;
-  background: #16a085;
-  border: 1px solid #16a085;
-  border-radius: 5px 0 0 5px;
+  color: #7627c7;
+  border-radius: 0 5px 0 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  right: 0;
 }
 .wrapper form .pass {
   margin: -8px 0 20px 0;

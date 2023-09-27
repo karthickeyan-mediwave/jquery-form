@@ -2,6 +2,18 @@ $(document).ready(function () {
   const User = [];
   $("#email-error").hide();
   $("#password-error").hide();
+  $("#eye").click(function () {
+    if ($("#eye").hasClass("fas fa-eye-slash")) {
+      $("#eye").removeClass("fas fa-eye-slash");
+      $("#eye").addClass("fas fa-eye");
+      $("#passwordid").attr("type", "text");
+    } else {
+      $("#eye").removeClass("fas fa-eye");
+      $("#eye").addClass("fas fa-eye-slash");
+      $("#passwordid").attr("type", "password");
+    }
+  });
+
   function validate() {
     let email = document.getElementById("emailid").value;
     let password = document.getElementById("passwordid").value;
